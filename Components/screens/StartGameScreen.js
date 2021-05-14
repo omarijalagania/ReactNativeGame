@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-
 import { View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, Button, Alert } from 'react-native';
 
 import Card from '../../Components/Card';
 import Colors from '../constants/Colors';
 import Input from '../Input';
 import NumberContainer from '../NumberContainer';
+
 const StartGameScreen = (props) => {
 
     const [userInput, setUserInput] = useState('');
@@ -43,7 +43,7 @@ const StartGameScreen = (props) => {
                     <NumberContainer>
                         {inputNumber}
                     </NumberContainer>
-                    <Button title="START GAME!"/>
+                    <Button title="START GAME!" onPress={()=> props.startGameHander(inputNumber)}/>
             </Card>
         }
     return(
