@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button, Image } from 'react-native';
+import StartButton from '../StartButton';
+import { Ionicons } from '@expo/vector-icons';
 
 const GameOverScreen = (props) => {
 	return (
@@ -7,13 +9,18 @@ const GameOverScreen = (props) => {
 			<Text style={styles.text}>Game Over!</Text>
 			<View style={styles.imageContainer}>
 				<Image
-					source={require('./../../assets/success.png')}
+					// source={require('./../../assets/success.png')}
+					source={{
+						uri: 'https://images.pexels.com/photos/5409751/pexels-photo-5409751.jpeg',
+					}}
 					style={styles.image}
 				/>
 			</View>
 			<Text style={styles.text}>Number of rounds: {props.roundsNumber}</Text>
 			<Text style={styles.text}>Number was: {props.userNumber}</Text>
-			<Button title='New Game' onPress={props.onRestart} />
+			<StartButton onPress={props.onRestart}>
+				<Ionicons name='refresh-outline' size={25} />
+			</StartButton>
 		</View>
 	);
 };
